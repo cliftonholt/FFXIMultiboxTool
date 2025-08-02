@@ -1,4 +1,5 @@
 [config]
 polpath = "G:\\PlayOnline\\SquareEnix\\PlayOnlineViewer"
+binpath = "G:\\Windower\\charbin\\"
 firstbin = "char1.bin"
 secondbin = "char2.bin"

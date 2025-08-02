@@ -15,6 +15,7 @@ struct Data{
 #[derive(Deserialize)]
 struct Config {
     polpath: String,
+    binpath: String,
     firstbin: String,
     secondbin: String,
 }
@@ -43,10 +44,12 @@ fn main() {
     };
     
     let pol_path = data.config.polpath + "\\usr\\all\\";
+    let bin_path = data.config.binpath;
     let firstbin = data.config.firstbin;
     let secondbin = data.config.secondbin;
-    let firstfile = format!("{}{}", pol_path, firstbin);
-    let secondfile = format!("{}{}", pol_path, secondbin);
+    let firstfile = format!("{}{}", bin_path, firstbin);
+    let secondfile = format!("{}{}", bin_path, secondbin);
+
     let mut buffer = String::new();
 
     if args.len() < 2 {
@@ -71,13 +74,14 @@ fn main() {
         exit(1);
     }
 
-    println!("Switching login_w.bin to char{}.bin", args[1]);
     
     if args[1].trim() == "1"{
+        println!("Switching login_w.bin to {}", firstbin);
         fs::copy(pol_path.to_string() + "login_w.bin", secondfile);
         fs::copy(firstfile, pol_path.to_string() + "login_w.bin");
     }
     else if args[1].trim() == "2"{
+        println!("Switching login_w.bin to {}", secondbin);
         fs::copy(pol_path.to_string() + "login_w.bin", firstfile);
         fs::copy(secondfile, pol_path.to_string() + "login_w.bin");
     }
