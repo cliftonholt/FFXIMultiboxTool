@@ -1,10 +1,10 @@
-# FFXI Multitool
+# FFXI Multiboxtool
 
 Command line tool for use with multi-boxing in Final Fantasy XI. Designed to facilitate swapping login_w.bin when you have more than 4 characters when using Jaku's autopol tool: https://github.com/jaku/FFXI-autoPOL.
 
 # Usage
 
-FFXI Multitool can be used by running the application normally or by calling it with a numerical argument.
+FFXI Multiboxtool can be used by running the application normally or by calling it with a numerical argument.
 
     ./FFXIMultitool.exe
 
